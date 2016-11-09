@@ -43,10 +43,10 @@ if course1 == course2 {
   print("these two are the same")
 }
 else {
-  print("these two are different")
+  print("these 2 are different")
 }
 
-// but what's even better to use a switch statement and do pattern matching:
+// but what's even better: use a switch statement and do pattern matching:
 func getCourseName(course: FirstQuarterTechnicalCourse) -> String {
   var courseName: String
   switch course {
@@ -84,14 +84,45 @@ func isMobileCourse(course: FirstQuarterTechnicalCourse) -> Bool {
 let isMobile = isMobileCourse(course: course1)
 print("The course is a mobile course: \(isMobile)")
 
+enum Weekday {
+    case m
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+    case saturday
+    case sunday
+}
+
+func getWeekdayName(day: Weekday) -> String {
+    var dayName: String
+    switch day {
+    case .m: dayName = "Monday"
+    case .tuesday: dayName = "Tuesday"
+    case .wednesday: dayName = "Wednesday"
+    case .thursday: dayName = "Thursday"
+    case .friday: dayName = "Friday"
+    case .saturday: dayName = "Saturday"
+    case .sunday: dayName = "Sunday"
+    }
+    return dayName
+}
+
+let printTest = getWeekdayName(day: .m)
+print("This weekday is called: \(printTest)")
+
+
+var testDay = Weekday.m
+
+func isItFinallyWeekend() {
+    
+}
 
 /*:
  ### Challenges
  
  1. Model a type called `Weekday` that represents the different days of the week.
- 2. Write a function called `getWeekdayName` that takes a `Weekday` returns the name of each weekday as a `String`, e.g.: `"This weekday is called Sunday."`
+ 2. Write a function called `getWeekdayName` that takes a `Weekday` and returns the name of each weekday as a `String`, e.g.: `"This weekday is called Sunday."`
  3. Write a function called `isItFinallyWeekend` that takes a `Weekday` and returns a `String` indicating whether the argument is a weekend weekday, e.g.: `"Monday is a regular workday."` or `"Wuhuuuu, it's SATURDAYYYYYYYY."`
  */
-
-
 
